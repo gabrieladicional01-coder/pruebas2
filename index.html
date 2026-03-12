@@ -1,96 +1,212 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>¿Por qué la gente no es feliz en Colombia?</title>
-<style>
-body{
-    background:#000;
-    color:#eee;
-    font-family: Arial, sans-serif;
-    margin:40px;
-    line-height:1.7;
-}
-h1,h2{color:#00d4ff;}
-section{
-    background:#111;
-    padding:30px;
-    border-radius:14px;
-    margin-bottom:60px;
-    box-shadow:0 0 20px rgba(0,0,0,0.8);
-}
-img{max-width:100%; border-radius:12px; margin:20px 0;}
-.flags img{width:120px; margin-right:20px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis: Felicidad en Colombia (2011-2024)</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #00d4ff;
+            --text-main: #2c3e50;
+            --text-muted: #546e7a;
+            --bg-body: #f4f7f9;
+            --bg-card: #ffffff;
+            --accent: #e74c3c;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--secondary);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "📊";
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .chart-box {
+            background: #f8f9fa;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* Estilo para los componentes de felicidad */
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .component-card {
+            background: #f1f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .component-card b {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .highlight-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 20px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            section { padding: 25px; }
+        }
+    </style>
 </head>
 <body>
 
-<h1>¿Por qué la gente no es feliz en Colombia?</h1>
+<header>
+    <h1>¿Por qué la gente no es feliz en Colombia?</h1>
+    <p style="color: #cbd5e0; max-width: 600px; margin: 10px auto;">Un análisis profundo sobre el bienestar social, la economía y la percepción ciudadana en la última década.</p>
+</header>
 
-<section>
-<h2>1. Evolución del nivel de felicidad en Colombia (2011–2024)</h2>
-<img src="colombia_score.png">
-<p>
-Esta gráfica muestra cómo ha cambiado la satisfacción con la vida en Colombia.
-Entre 2011 y 2015 el país alcanzó niveles relativamente altos de bienestar,
-lo que indica estabilidad económica y social. Sin embargo,
-desde 2016 comienza un descenso continuo que se profundiza entre 2020 y 2022.
-Esto sugiere deterioro en factores como seguridad económica,
-confianza institucional y estabilidad social.
-La leve recuperación posterior indica resiliencia, pero no retorno a los niveles máximos.
-</p>
-</section>
+<div class="container">
 
-<section>
-<h2>2. Componentes que explican la felicidad en Colombia</h2>
-<img src="colombia_components.png">
-<p>
-El puntaje total se compone de varios factores medibles:
-<br><br>
-<b>PIB per cápita:</b> Nivel promedio de riqueza económica.
-<br>
-<b>Apoyo social:</b> Existencia de familiares o amigos que brindan ayuda.
-<br>
-<b>Esperanza de vida saludable:</b> Calidad y duración de la vida.
-<br>
-<b>Libertad para tomar decisiones:</b> Percepción de autonomía personal.
-<br>
-<b>Generosidad:</b> Conductas solidarias.
-<br>
-<b>Percepción de corrupción:</b> Confianza en instituciones.
-<br>
-<b>Dystopia + residual:</b> Factores culturales o no medidos directamente.
-<br><br>
-Se observa que el apoyo social es el pilar principal en Colombia,
-mientras que la percepción de corrupción y la libertad presentan debilidades importantes.
-</p>
-</section>
+    <section>
+        <h2>Evolución histórica (2011–2024)</h2>
+        <div class="chart-box">
+            <img src="colombia_score.png" alt="Gráfica de evolución de felicidad">
+        </div>
+        <p>
+            El análisis histórico revela que Colombia gozó de un periodo de <b>estabilidad y optimismo entre 2011 y 2015</b>. Sin embargo, la tendencia cambió drásticamente a partir de 2016.
+        </p>
+        <div class="highlight-box">
+            "El descenso entre 2020 y 2022 sugiere que factores externos como la pandemia profundizaron crisis internas de seguridad económica y confianza."
+        </div>
+    </section>
 
-<section>
-<h2>3. Comparación con América Latina (2024)</h2>
-<img src="latin_america_2024.png">
-<p>
-Colombia se ubica en una posición media dentro de la región.
-Países como Costa Rica y Uruguay presentan mejores resultados,
-principalmente por mayor estabilidad institucional y económica.
-Por otro lado, Venezuela y Bolivia muestran niveles más bajos.
-Esto indica que el bienestar regional depende más de la estabilidad social
-que únicamente del ingreso económico.
-</p>
-</section>
-    
-<section>
-<h2>5. Los países más felices del mundo</h2>
-<img src="top3_2024.png">
-<p>
-Finlandia, Dinamarca e Islandia lideran el ranking mundial.
-Estos países combinan alto nivel económico,
-baja corrupción, excelente sistema de salud
-y gran confianza social.
-La diferencia con Colombia no es cultural sino estructural:
-instituciones sólidas y seguridad económica sostenida.
-</p>
-</section>
+    <section>
+        <h2>Los pilares del bienestar</h2>
+        <p>El puntaje de felicidad no es una cifra aislada; se construye a través de siete dimensiones clave:</p>
+        
+        <div class="components-grid">
+            <div class="component-item">
+                <div class="component-card"><b>PIB per cápita</b> Riqueza económica promedio del país.</div>
+            </div>
+            <div class="component-item">
+                <div class="component-card"><b>Apoyo social</b> La red de seguridad de amigos y familiares.</div>
+            </div>
+            <div class="component-item">
+                <div class="component-card"><b>Salud</b> Esperanza de vida y acceso a servicios.</div>
+            </div>
+            <div class="component-item">
+                <div class="component-card"><b>Libertad</b> Autonomía para decidir el camino de vida.</div>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <img src="colombia_components.png" alt="Componentes de la felicidad">
+        </div>
+        <p>
+            A pesar de las dificultades, el <b>apoyo social</b> sigue siendo el pilar más fuerte de los colombianos. Por el contrario, la corrupción y la falta de libertad percibida actúan como los principales frenos al desarrollo humano.
+        </p>
+    </section>
+
+    <section>
+        <h2>Perspectiva Regional: América Latina</h2>
+        <div class="chart-box">
+            <img src="latin_america_2024.png" alt="Comparación con América Latina">
+        </div>
+        <p>
+            Colombia mantiene una posición media-alta en la región. El éxito de vecinos como <b>Costa Rica y Uruguay</b> demuestra que la felicidad está más ligada a la <b>fortaleza institucional</b> que exclusivamente al crecimiento del PIB.
+        </p>
+    </section>
+
+    <section>
+        <h2>Referentes Globales</h2>
+        <div class="chart-box">
+            <img src="top3_2024.png" alt="Top 3 países más felices">
+        </div>
+        <p>
+            Finlandia, Dinamarca e Islandia no son felices por casualidad. Su éxito radica en un modelo estructural:
+        </p>
+        <ul>
+            <li>Baja percepción de corrupción.</li>
+            <li>Sistemas de salud universales y eficientes.</li>
+            <li>Seguridad económica que permite la planificación a largo plazo.</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Reporte de Bienestar Social | Datos basados en el World Happiness Report</p>
+</footer>
 
 </body>
 </html>
