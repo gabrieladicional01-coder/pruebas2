@@ -13,6 +13,7 @@
             --bg-body: #f4f7f9;
             --bg-card: #ffffff;
             --accent: #e74c3c;
+            --link-color: #007bff;
         }
 
         body {
@@ -56,8 +57,6 @@
             color: var(--primary);
             font-size: 1.8rem;
             margin-top: 0;
-            display: flex;
-            align-items: center;
         }
 
         .chart-box {
@@ -75,12 +74,42 @@
             border-radius: 4px;
         }
 
+        .flags {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .flags img {
+            width: 80px;
+            border: 1px solid #ddd;
+        }
+
         p {
             font-size: 1.1rem;
             color: var(--text-muted);
         }
 
-        /* Estilos para los cuadros de autores */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .source-text {
+            text-align: center;
+            font-size: 1rem;
+            margin: 40px 0;
+            padding: 20px;
+            background: #eef2f5;
+            border-radius: 8px;
+        }
+
         .authors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -94,12 +123,6 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .author-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary);
         }
 
         .author-card h3 {
@@ -110,9 +133,8 @@
 
         .author-card p {
             margin: 0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--accent);
-            word-break: break-all;
         }
 
         footer {
@@ -121,53 +143,68 @@
             color: var(--text-muted);
             font-size: 0.9rem;
         }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            section { padding: 25px; }
-        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>¿Por qué la gente no es feliz en Colombia?</h1>
-    <p style="color: #cbd5e0; max-width: 600px; margin: 10px auto;">Un análisis profundo sobre el bienestar social, la economía y la percepción ciudadana.</p>
+    <p style="color: #cbd5e0; max-width: 600px; margin: 10px auto;">Análisis de bienestar basado en datos del World Happiness Report.</p>
 </header>
 
 <div class="container">
 
     <section>
-        <h2>Evolución histórica de Colombia (2011–2024)</h2>
+        <h2>Evolución histórica (2011–2024)</h2>
         <div class="chart-box">
-            <img src="colombia_score.png" alt="Gráfica de evolución de felicidad">
+            <img src="colombia_score.png" alt="Evolución felicidad">
         </div>
-        <p>
-            Entre 2011 y 2015 el país alcanzó los niveles relativamente mas altos de bienestar y felicidad en toda su historia pero, Desde 2016 comienza un descenso continuo que se profundiza entre 2020 y 2022 posiblemente por la llegada de diferentes factores uno de los mas determinantes la cuarentena y la pandemia.Luego de eso El pais se ha estado recuperando pero aun no logra regresar a los nieveles de felicidad que registraba anteriormente.
-        </p>
+        <p>Entre 2011 y 2015 el país alcanzó niveles altos de bienestar. Sin embargo, desde 2016 comienza un descenso continuo que se profundiza entre 2020 y 2022.</p>
     </section>
 
     <section>
         <h2>Componentes del bienestar</h2>
         <div class="chart-box">
-            <img src="colombia_components.png" alt="Componentes de la felicidad">
+            <img src="colombia_components.png" alt="Componentes">
         </div>
-        <p>
-            Se observa que el apoyo social es el pilar principal en Colombia. Por otro lado, la percepción de corrupción y la libertad para tomar decisiones presentan debilidades importantes.
-        </p>
+        <p>El <b>apoyo social</b> es el pilar principal en Colombia, mientras que la percepción de corrupción y la libertad presentan debilidades importantes.</p>
     </section>
 
     <section>
-        <h2>Comparación Regional (2024)</h2>
+        <h2>Comparativa Regional</h2>
         <div class="chart-box">
-            <img src="latin_america_2024.png" alt="Comparación con América Latina">
+            <img src="latin_america_2024.png" alt="Ranking LATAM">
         </div>
-        <p>
-            Colombia se ubica en una posición media dentro de la región. Países como Costa Rica y Uruguay presentan mejores resultados, mientras que Venezuela y Bolivia muestran niveles más bajos.
-        </p>
+        <p>Colombia se ubica en una posición media. Países como Costa Rica y Uruguay lideran gracias a una mayor estabilidad institucional.</p>
     </section>
 
-    <section id="autores">
+    <section>
+        <h2>Comparación: Portugal, Colombia y Ecuador</h2>
+        <div class="chart-box">
+            <div class="flags">
+                <img src="flag_portugal.png" alt="Portugal">
+                <img src="flag_colombia.png" alt="Colombia">
+                <img src="flag_ecuador.png" alt="Ecuador">
+            </div>
+            <img src="portugal_colombia_ecuador.png" alt="Comparativa tres países">
+        </div>
+        <p>Portugal destaca en estabilidad institucional, mientras Colombia sobresale en apoyo social. Ecuador muestra una estructura similar a la colombiana.</p>
+    </section>
+
+    <section>
+        <h2>Los países más felices del mundo</h2>
+        <div class="chart-box">
+            <img src="top3_2024.png" alt="Top 3 mundial">
+        </div>
+        <p>Finlandia, Dinamarca e Islandia lideran el ranking debido a su baja corrupción y excelentes sistemas de salud.</p>
+    </section>
+
+    <div class="source-text">
+        La información usada en este análisis fue obtenida de: 
+        <a href="https://worldhappiness.report/" target="_blank">World Happiness Report</a>
+    </div>
+
+    <section>
         <h2>Equipo de Investigación</h2>
         <div class="authors-grid">
             <div class="author-card">
@@ -188,7 +225,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2024 Reporte de Bienestar Social | Fuente: World Happiness Report</p>
+    <p>&copy; 2024 Reporte de Bienestar Social</p>
 </footer>
 
 </body>
